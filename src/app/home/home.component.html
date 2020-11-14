@@ -1,0 +1,28 @@
+
+
+<button class="btn btn-warning" (click)="switchform()" *ngIf="!showform">ADD Product</button>
+<br>
+
+<app-form-product *ngIf="showform" (addpro)="add($event)"></app-form-product>
+
+<br>
+<form >
+    <div class="form-group">
+        
+        <input type="number" name="max" id="max" class="form-control " placeholder="Search" [(ngModel)]="pmax">
+    </div>
+</form>
+
+<div class="row">
+
+    <app-product *ngFor="let p of listproduct" [product]="p" [pmax]="pmax" (notifEvent)="incrimnter($event)">
+
+    </app-product>
+</div>
+
+
+
+
+
+
+

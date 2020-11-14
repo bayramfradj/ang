@@ -1,0 +1,25 @@
+
+<form  class="form-group">
+  <input type="number" class="form-control" name="userId" [(ngModel)]="userId" (change)="update()" placeholder="Search by USER ID ">
+</form>
+
+
+<div class="row d-flex align-items-center justify-content-center" >
+  <img *ngIf="!completed" src="../../assets/30.gif" alt="loding"  style="margin-top: 200px;" />
+</div>
+
+
+
+<ul class="list-unstyled" style="border: 1px solid #ced4da; padding: 20px; border-radius: 5px;" *ngIf="completed">
+  <li class="media" *ngFor="let task of Todolist" style="border-bottom: 1px solid  #ced4da; margin: 10px; padding: 10px;">
+    <img src="https://via.placeholder.com/70" class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">{{task.title}}</h5>
+      
+       # : {{task.id}} || userId : {{task.userId}}
+       <span class="badge badge-success" *ngIf="task.completed">completed</span>
+      <span class="badge badge-danger" *ngIf="!task.completed">Not completed</span>
+    </div>
+  </li>
+  
+</ul>

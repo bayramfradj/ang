@@ -1,0 +1,10 @@
+<div class="col-md-3"  *ngIf="product.price <= pmax || pmax == null">
+<div class="card" style="width: 20rem;">
+    <img class="card-img-top" src="../../assets/{{product.img}}" height="300px" alt="{{product.img}}">
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text">This {{product.title}} costs {{product.price}}$ , and have <strong>  {{product.like}} </strong> likes. </p>
+      <button  class="btn btn-primary" (click) = "sendNotif()">Like this product </button>
+    </div>
+  </div>
+</div>
